@@ -41,6 +41,9 @@
             <a href="https://www.tiktok.com/@gamerguytv" target="_blank" class="btn btn-outline-light social-btn">
               <i class="bi bi-tiktok me-2"></i>TikTok
             </a>
+            <a href="https://www.twitch.tv/gamer_guy_tv" target="_blank" class="btn btn-outline-light social-btn">
+              <i class="bi bi-twitch me-2"></i>Twitch
+            </a>
           </div>
         </div>
         <div class="col-md-5 text-center">
@@ -68,8 +71,23 @@
     </div>
   </section>
 
-  <!-- TikTok Feed -->
+  <!-- Twitch -->
   <section class="py-5 bg-white">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h2 class="section-title mb-0">Twitch</h2>
+        <a href="https://www.twitch.tv/gamer_guy_tv" target="_blank" class="btn btn-sm btn-outline-primary">
+          <i class="bi bi-twitch me-1"></i> Follow on Twitch
+        </a>
+      </div>
+      <div class="twitch-wrapper">
+        <div id="twitch-embed"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TikTok Feed -->
+  <section class="py-5">
     <div class="container">
       <h2 class="section-title mb-4">My TikTok Feed</h2>
       <div class="tiktok-wrapper">
@@ -85,7 +103,17 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
   <script>
+    new Twitch.Embed("twitch-embed", {
+      width: "100%",
+      height: 480,
+      channel: "gamer_guy_tv",
+      layout: "video",
+      autoplay: false,
+      parent: ["gamerguytv.com", "lmdoyle.github.io", "localhost"]
+    });
+
     const CHANNEL_ID = 'UCqerFn8i1CGwejETEnnGEfw';
     const PROXY = url => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
 
