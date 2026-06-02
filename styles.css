@@ -239,16 +239,18 @@ body {
 }
 
 .app-card-icon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #1a73c2, #0d47a1);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.6rem;
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  overflow: hidden;
   flex-shrink: 0;
+}
+
+.app-card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 .app-card-body {
