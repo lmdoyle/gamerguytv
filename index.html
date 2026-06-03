@@ -134,7 +134,9 @@
         `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${UPLOADS_PLAYLIST}&maxResults=20&key=${API_KEY}`
       );
       const playlistData = await playlistResp.json();
-      if (!playlistData.items?.length) throw new Error();
+      console.log('Playlist response:', playlistData);
+      if (playlistData.error) throw new Error('API error: ' + playlistData.error.message);
+      if (!playlistData.items?.length) throw new Error('No items in playlist');
 
       const items = playlistData.items;
       const videoIds = items.map(i => i.snippet.resourceId.videoId).join(',');
@@ -144,6 +146,8 @@
         `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${videoIds}&key=${API_KEY}`
       );
       const detailsData = await detailsResp.json();
+      console.log('Details response:', detailsData);
+      if (detailsData.error) throw new Error('Details API error: ' + detailsData.error.message);
       const durations = {};
       detailsData.items.forEach(v => { durations[v.id] = parseDuration(v.contentDetails.duration); });
 
@@ -151,6 +155,7 @@
       const videos = items
         .filter(i => (durations[i.snippet.resourceId.videoId] || 0) > 60)
         .slice(0, 6);
+      console.log('Videos after filtering:', videos.length);
 
       document.getElementById('yt-loading').style.display = 'none';
       const grid = document.getElementById('yt-grid');
