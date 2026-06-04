@@ -221,6 +221,41 @@ body {
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
+/* About page */
+.about-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border: 4px solid #fff;
+}
+
+.about-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 36px;
+  line-height: 1.75;
+  color: #333;
+}
+
+.about-tag {
+  background: #f0f4ff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a73c2;
+}
+
+.about-tag i {
+  font-size: 1.1rem;
+}
+
 /* App cards */
 .app-card {
   background: #fff;
