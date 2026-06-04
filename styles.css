@@ -198,6 +198,13 @@ body {
   color: #1a1a1a;
 }
 
+.stat-desc {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
 /* Policy */
 .policy-card {
   border: none;
@@ -254,6 +261,29 @@ body {
 
 .about-tag i {
   font-size: 1.1rem;
+}
+
+.about-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.15s;
+}
+
+.about-contact-link:hover {
+  background: #e9ecef;
+  color: #1a1a1a;
+}
+
+.about-contact-link i {
+  font-size: 1.2rem;
 }
 
 /* App cards */
